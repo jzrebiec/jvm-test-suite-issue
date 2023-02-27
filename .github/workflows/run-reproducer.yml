@@ -10,7 +10,10 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-java@v1
       with:
-        java-version: 11
+        java-version: 17
     - uses: gradle/gradle-build-action@v2
       with:
         arguments: help --info
+
+    - name: Gradle Check
+      run: ./gradlew clean check
